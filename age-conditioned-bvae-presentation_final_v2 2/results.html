@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - β-VAE Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">β-VAE Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="preprocessing.html">Preprocessing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="evaluation.html">Evaluation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container my-5">
+        <h2>Results: Age Transformation Simulation</h2>
+        <img src="assets/aging_simulation.jpeg" class="img-fluid" alt="Aging Simulation">
+        <h3>Aging Simulation</h3>
+        <p>Our age transformation simulation demonstrated the model's ability to realistically age faces. By manipulating the age shift vector in latent space, we generated plausible aging effects while preserving the individual's identity.</p>
+    </section>
+
+    <section class="container my-5">
+        <h3>Latent Space Disentanglement</h3>
+        <p>To quantify the disentanglement of the latent space, we employed metrics such as Mutual Information Gap (MIG). This metric helped us understand the extent to which individual latent variables captured distinct factors of variation (e.g., age).</p>
+    </section>
+
+    <section class="container my-5">
+        <h3>Age Shift Vector Application</h3>
+        <p>We applied age shift vectors to test the model's interpolation capabilities. By manipulating the latent representation, we evaluated how smoothly and realistically the model could transition between different ages.</p>
+    </section>
+
+    <section class="container my-5">
+        <h3>Rejuvenation Simulation</h3>
+        <img src="assets/rejuvenation_simulation.jpeg" class="img-fluid" alt="Rejuvenation Simulation">
+        <p>Conversely, our rejuvenation simulation showcased the model's capacity to reverse the aging process. This involved applying a reverse age shift vector, effectively making older faces appear younger while maintaining their unique characteristics.</p>
+    </section>
+
+    <section class="container my-5">
+        <h2>Conclusion and Future Directions</h2>
+        <h3>Summary of Work</h3>
+        <p>We successfully implemented an age-conditioned β-VAE for disentangling latent age factors in face images. We addressed data imbalance, optimized the model architecture, and achieved realistic age transformation simulations.</p>
+    </section>
+
+    <footer class="text-center bg-dark text-white py-3">
+        <p>&copy; 2025 β-VAE Research Team</p>
+    </footer>
+</body>
+</html>
