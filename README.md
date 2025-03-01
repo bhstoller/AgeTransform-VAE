@@ -46,7 +46,7 @@ Recognizing the dataset’s inherent imbalances (fewer samples for older individ
 
 Our preprocessing steps included filtering low-quality images, correcting face crops, resizing all images to a consistent resolution (128x128 or 256x256 pixels), normalizing pixel values to a range between [-1,1] or [0,1], and encoding age as a normalized numerical condition [0,1].
 
-## _Evaluation Metrics and Performance Assessment_
+## Evaluation Metrics and Performance Assessment
 
 ### Reconstruction Accuracy
 
@@ -60,7 +60,7 @@ To quantify the disentanglement of the latent space, we employed metrics such as
 
 We applied age shift vectors to test the model’s interpolation capabilities. By manipulating the latent representation, we evaluated how smoothly and realistically the model could transition between different ages.
 
-## _Key Challenges and Solutions_
+## Key Challenges and Solutions
 
 ### Dataset Imbalance
 
@@ -70,7 +70,7 @@ The IMDB-Wiki dataset had a notable age imbalance, with fewer samples for older 
 
 Achieving effective disentanglement of age from other facial features proved challenging. Tuning the β hyperparameter in the β-VAE was crucial. We conducted extensive experiments to find an optimal value that balanced reconstruction quality and disentanglement performance.
 
-## _Results: Age Transformation Simulation_
+## Results: Age Transformation Simulation
 
 ### Aging Simulation
 
@@ -78,7 +78,7 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 
 <img width="307" alt="Screenshot 2025-03-01 at 2 22 37 PM" src="https://github.com/user-attachments/assets/831e1618-5d44-43aa-a915-ccb618afefc6" />
 
-## _Conclusion and Future Directions_
+## Conclusion and Future Directions
 
 ## Summary of Work
 
