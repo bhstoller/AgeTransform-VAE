@@ -1,6 +1,8 @@
 # Age-Conditioned Representation Learning with β-VAE
 
-Our goal was to disentangle latent age factors in face images, allowing for controlled age manipulation. We will discuss the methods, models, data, evaluation, and timeline of our project, providing an overview of our approach and results. By controlling the Beta hyperparameter within a VAE framework, we aim to generate meaningful results and produce high-quality images
+Our goal was to disentangle latent age factors in face images, allowing for controlled age manipulation. We will discuss the methods, models, data, evaluation, and timeline of our project, providing an overview of our approach and results. By controlling the Beta hyperparameter within a VAE framework, we aim to generate meaningful results and produce high-quality images.
+
+![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
 
 ## Dataset:
 Morph-2 Dataset.
@@ -59,6 +61,9 @@ To quantify the disentanglement of the latent space, we employed metrics such as
 ### Age Shift Vector Application
 
 We applied age shift vectors to test the model’s interpolation capabilities. By manipulating the latent representation, we evaluated how smoothly and realistically the model could transition between different ages.
+
+![image](https://github.com/user-attachments/assets/2986904c-74b3-4986-b9ae-f366cd0e84ac)
+
 
 ## Key Challenges and Solutions
 
