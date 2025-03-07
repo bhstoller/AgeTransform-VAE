@@ -177,3 +177,8 @@ cython_debug/
 .DS_Store
 *.html
 /checkpoints
+/checkpoint_backups
+/new_test
+/previous_checkpoints/beta_checkpoint_backups
+/previous_checkpoints/checkpoints_CVAE_03_06_morning
+/previous_checkpoints/CVAE_03_05_evening_run
