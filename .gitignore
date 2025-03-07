@@ -182,3 +182,5 @@ cython_debug/
 /previous_checkpoints/beta_checkpoint_backups
 /previous_checkpoints/checkpoints_CVAE_03_06_morning
 /previous_checkpoints/CVAE_03_05_evening_run
+/cvae_03_06_best_64_64
+checkpoints.zip
