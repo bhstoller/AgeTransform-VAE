@@ -184,3 +184,4 @@ cython_debug/
 /previous_checkpoints/CVAE_03_05_evening_run
 /cvae_03_06_best_64_64
 checkpoints.zip
+/checkpoints_best_03_10

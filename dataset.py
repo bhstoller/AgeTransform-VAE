@@ -14,21 +14,20 @@ class MorphII_Dataset(Dataset):
 
     def __getitem__(self, idx):
         row = self.data_frame.iloc[idx]
-
         file_path = row['filepath']
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File {file_path} does not exist. Check CSV paths.")
         image = cv2.imread(file_path)
         if image is None:
             raise ValueError(f"Image at {file_path} could not be loaded.")
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Convert from BGR to RGB
+        # Convert from BGR to RGB.
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
+        # Normalize age (assumed between 0 and 100) and cast gender to float.
         age = row['age']
-        condition = torch.tensor([age / 100.0], dtype=torch.float32)
+        gender = row['gender']
+        condition = torch.tensor([age / 100.0, float(gender)], dtype=torch.float32)
 
         if self.transform:
             image = self.transform(image)
         return image, condition
-
-
-
