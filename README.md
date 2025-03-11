@@ -1,6 +1,7 @@
 # Age-Conditioned Representation Learning with Conditional VAE
 <p align="justify">
-
+Our goal was to disentangle latent age factors in face images to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (Conditional VAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
+</p>
 
 ![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
 
