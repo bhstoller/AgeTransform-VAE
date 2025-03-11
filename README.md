@@ -20,6 +20,45 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 ![image](figures/architecture.png)
 
+_**1. Input Image**_
+<p align="justify">
+	•	The input image is a face image (likely from the dataset) with dimensions 128×128 or 256×256 pixels.
+	•	This image is passed through a Convolutional Neural Network (CNN)-based Encoder.
+</p>
+
+_**2. Encoder Network**_
+<p align="justify">
+	•	The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
+	•	Conv1 (16x): Extracts low-level features like edges and textures.
+	•	Conv2 (32x): Detects more complex patterns.
+	•	Conv3 (64x): Captures mid-level structures like facial parts (eyes, nose, mouth).
+	•	Conv4 (128x): Extracts high-level abstract representations.
+	•	The final encoded representation is flattened and passed through fully connected layers to compute the latent space representation.
+</p>
+
+_**3. Latent Space (Middle)**_
+<p align="justify">
+	•	The latent space consists of two key vectors:
+	•	Mu (Mean vector, 256-dimensions): Represents the center of the learned latent distribution.
+	•	LogVar (Log Variance, 256-dimensions): Defines the spread of the distribution.
+	•	A random latent representation is sampled using the reparameterization trick, ensuring differentiability for backpropagation.
+</p>
+
+_**4. Decoder Network**_
+<p align="justify">
+	•	The decoder reconstructs the image from the latent space.
+	•	It uses transposed convolution layers (deconvolutions) to upsample the feature maps gradually.
+	•	The layers mirror the encoder:
+	•	128×128 → 64×64 → 32×32 → 16×16
+	•	Each layer reconstructs more details of the image.
+</p>
+
+_**5. Output (Reconstructed Image)**_
+<p align="justify">
+	•	The final output is a reconstructed image with the same dimensions as the input.
+	•	If age manipulation is applied, the age-conditioned vector modifies the latent space to generate an aged (or de-aged) version of the face.
+</p>
+
 ### _Loss Functions_
 <p align="justify">
 The training process utilized reconstruction loss (Mean Squared Error - MSE) and KL divergence loss to achieve image fidelity and latent space regularization.
