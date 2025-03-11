@@ -36,16 +36,23 @@ arch = [
     to_Pool(name="pool4", offset="(0,0,0)", to="(enc4-east)", width=1, height=8, depth=8, opacity=0.5),
 
     # Latent Space (Mu and LogVar)
-    to_ConvConvRelu(name='mu', s_filer=8, n_filer=(256, 256), offset="(2,0,0)", to="(pool4-east)", width=(8, 8),
+    to_ConvConvRelu(name='mu', s_filer=8, n_filer=(256, 256), offset="(2,1,0)", to="(pool4-east)", width=(8, 8),
                     height=8, depth=8, caption="Mu"),
-    to_ConvConvRelu(name='logvar', s_filer=8, n_filer=(256, 256), offset="(2,0,0)", to="(mu-east)", width=(8, 8),
+    to_ConvConvRelu(name='logvar', s_filer=8, n_filer=(256, 256), offset="(2,-1,0)", to="(pool4-east)", width=(8, 8),
                     height=8, depth=8, caption="LogVar"),
-    to_connection("pool4", "mu"),
-    to_connection("mu", "logvar"),
+    to_skip(of="pool4", to="mu", pos=1.25),
+    to_skip(of="pool4", to="logvar", pos=1.25),
+
+    to_SoftMax(name='condition', s_filer=1, offset="(16,4,0)", to="(input)", width=0.5, height=2, depth=2,
+                   caption="Condition"),
 
     # Decoder
-    *block_Unconv(name="dec1", botton="logvar", top="up1", s_filer=16, n_filer=128, offset="(2.1,0,0)",
-                  size=(16, 16, 5.5), opacity=0.5),
+
+    *block_Unconv(name="dec1", botton="mu", top="up1", s_filer=16, n_filer=128, offset="(2.1,0,0)", size=(16, 16, 5.5),
+                  opacity=0.5),
+
+    to_skip(of="condition", to="unpool_dec1", pos=1.25),
+
     *block_Unconv(name="dec2", botton="up1", top="up2", s_filer=32, n_filer=64, offset="(2.1,0,0)", size=(25, 25, 4.5),
                   opacity=0.5),
     *block_Unconv(name="dec3", botton="up2", top="up3", s_filer=64, n_filer=32, offset="(2.1,0,0)", size=(32, 32, 3.5),
