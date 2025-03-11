@@ -18,18 +18,24 @@ Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://d
 Our Conditional VAE architecture consists of a CNN-based encoder that encodes face images and conditioning attributes (age and gender) into a latent space representation. A corresponding decoder reconstructs the images, conditioned on the latent representation and attributes, enabling effective attribute disentanglement and manipulation.
 </p>
 
-[!image](figures/architecture)
+![image](figures/architecture.png)
 
 ### Loss Functions
 <p align="justify">
-Our training process used a combination of loss functions. We used MSE or L1 reconstruction loss to ensure high-quality image reconstruction. We also used a KL divergence loss to regularize the latent space. To further enhance age feature separation, we incorporated an age-conditioned loss function, providing additional guidance during training.
+The training process utilized reconstruction loss (Mean Squared Error - MSE) and KL divergence loss to achieve image fidelity and latent space regularization.
 </p>
 
 ## Model Training and Baseline Comparison
 
+Data was preprocessed with:
+
+- Image resizing to 128x128 pixels
+
+- Normalization of pixel values
+
 ### 1. Training from Scratch
 <p align="justify">
-We chose to train the β-VAE from scratch on a local GPU, allowing us full control over the learning process and parameters. Rather than relying on pre-trained models, this approach enabled us to customize the architecture and training regime to our specific goals of age disentanglement.
+We trained the Conditional VAE from scratch using PyTorch. The model was optimized using the Adam optimizer with a learning rate of 0.0008 for 500 epochs. Training was performed on the Apple MPS backend (ARM-based MacBook Pro), ensuring efficient utilization of hardware resources.
 </p>
 
 ### 2. Architecture Inspiration
@@ -44,9 +50,9 @@ To benchmark our progress, we planned to compare our results against a pre-train
 
 ## _Data Preparation_
 
-### 1. IMDB-Wiki Dataset
+### 1. MorphII Dataset
 <p align="justify">
-We utilized the IMDB-Wiki dataset, consisting of around 500,000 labeled face images from IMDb and Wikipedia. This dataset provided a rich source of data for training our model, including metadata such as age, gender, and timestamps.
+We utilized the MorphII dataset, consisting of around 500,000 labeled face images from IMDb and Wikipedia. This dataset provided a rich source of data for training our model, including metadata such as age, gender, and timestamps.
 </p>
 
 ### 2. Addressing Data Imbalance
@@ -114,7 +120,20 @@ Achieving effective disentanglement of age from other facial features proved cha
 Our age transformation simulation demonstrated the model’s ability to realistically age faces. By manipulating the age shift vector in latent space, we generated plausible aging effects while preserving the individual’s identity.
 </p>
 
-<img width="307" alt="Screenshot 2025-03-01 at 2 22 37 PM" src="https://github.com/user-attachments/assets/831e1618-5d44-43aa-a915-ccb618afefc6" />
+![reconstruction of test set](figures/test_reconstruction.png)
+
+![aging of test set](figures/test_age.png)
+
+![reconstruction of development team](figures/team_reconstruction.png)
+
+![aging of development team](figures/team_age.png)
+
+![aging of kyler](figures/gifs/age_variation_kyler.gif)
+![aging of brad](figures/gifs/age_variation_brad.gif)
+![aging of john](figures/gifs/age_variation_john.gif)
+![aging of casey](figures/gifs/age_variation_casey.gif)
+![aging of batu](figures/gifs/age_variation_batu.gif)
+
 
 ## Conclusion and Future Directions
 
