@@ -1,6 +1,6 @@
-# Age-Conditioned Representation Learning with β-VAE
+# Age-Conditioned Representation Learning with Conditional VAE
 <p align="justify">
-Our goal was to disentangle latent age factors in face images, allowing for controlled age manipulation. We will discuss the methods, models, data, evaluation, and timeline of our project, providing an overview of our approach and results. By controlling the Beta hyperparameter within a VAE framework, we aim to generate meaningful results and produce high-quality images.
+Our goal was to disentangle latent age factors in face images to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (Conditional VAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
 </p>
 
 ![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
@@ -13,10 +13,12 @@ Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://d
 
 ## Methodology: β-VAE Implementation
 
-### β-VAE Architecture
+### CVAE Architecture
 <p align="justify">
-We implemented a β-VAE, an enhancement over standard VAEs, which uses a β hyperparameter to better control disentanglement. This allows for better isolation of the latent age factor while maintaining reconstruction quality. Our architecture features a CNN-based encoder for extracting meaningful features and a mirror-decoder for reconstruction.
+Our Conditional VAE architecture consists of a CNN-based encoder that encodes face images and conditioning attributes (age and gender) into a latent space representation. A corresponding decoder reconstructs the images, conditioned on the latent representation and attributes, enabling effective attribute disentanglement and manipulation.
 </p>
+
+[!image](figures/architecture)
 
 ### Loss Functions
 <p align="justify">
