@@ -65,10 +65,12 @@ One of the most time-consuming and technically challenging aspects of our projec
 <p align="justify">
 Images in our dataset had highly varied backgrounds, ranging from plain walls to complex, multicolored environments. This made it difficult for the model to focus on facial features rather than irrelevant background information.
 </p>
+
 ### 2.	Framing and Alignment Issues: 
 <p align="justify">
 Face images were not consistently aligned, with variations in head tilt, positioning, and scale affecting training quality. Without proper alignment, the model had difficulty learning smooth age transformations.
 </p>
+
 ### 3.	Lighting Variability: 
 <p align="justify">
 Different images had different exposure levels, making it harder for the model to generalize across lighting conditions.
