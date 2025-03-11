@@ -40,7 +40,7 @@ While training from scratch, we referenced architectures such as ResNet-like CNN
 To benchmark our progress, we planned to compare our results against a pre-trained VAE model sourced from repositories like TensorFlow Model Garden or PapersWithCode. This comparison was intended to provide a quantitative measure of the improvements achieved through our β-VAE implementation and age-conditioned training approach.
 </p>
 
-## _Data Preparation and Preprocessing_
+## _Data Preparation_
 
 ### 1. IMDB-Wiki Dataset
 <p align="justify">
@@ -52,9 +52,24 @@ We utilized the IMDB-Wiki dataset, consisting of around 500,000 labeled face ima
 Recognizing the dataset’s inherent imbalances (fewer samples for older individuals), we implemented several preprocessing steps to improve training quality and ensure fair representation across age ranges.
 </p>
 
-### 3. Preprocessing Steps
+## _Data Preprocessing Challenges and Solutions_
 <p align="justify">
-Our preprocessing steps included filtering low-quality images, correcting face crops, resizing all images to a consistent resolution (128x128 or 256x256 pixels), normalizing pixel values to a range between [-1,1] or [0,1], and encoding age as a normalized numerical condition [0,1].
+One of the most time-consuming and technically challenging aspects of our project was ensuring consistency in image backgrounds, framing, and lighting. Without addressing these factors, the model struggled to learn a clean latent representation of age, as variations in background color, head positioning, and brightness introduced unwanted noise.
+</p>
+
+### Challenges Faced
+
+### 1.	Background Inconsistency: 
+<p align="justify">
+Images in our dataset had highly varied backgrounds, ranging from plain walls to complex, multicolored environments. This made it difficult for the model to focus on facial features rather than irrelevant background information.
+</p>
+### 2.	Framing and Alignment Issues: 
+<p align="justify">
+Face images were not consistently aligned, with variations in head tilt, positioning, and scale affecting training quality. Without proper alignment, the model had difficulty learning smooth age transformations.
+</p>
+### 3.	Lighting Variability: 
+<p align="justify">
+Different images had different exposure levels, making it harder for the model to generalize across lighting conditions.
 </p>
 
 ## Evaluation Metrics and Performance Assessment
