@@ -1,6 +1,6 @@
-# Age-Conditioned Representation Learning with β-VAE
+# Age-Conditioned Representation Learning with Conditional VAE
 <p align="justify">
-Our goal was to disentangle latent age factors in face images, allowing for controlled age manipulation. We will discuss the methods, models, data, evaluation, and timeline of our project, providing an overview of our approach and results. By controlling the Beta hyperparameter within a VAE framework, we aim to generate meaningful results and produce high-quality images.
+Our goal was to disentangle latent age factors in face images to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (Conditional VAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
 </p>
 
 ![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
@@ -13,21 +13,29 @@ Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://d
 
 ## Methodology: β-VAE Implementation
 
-### β-VAE Architecture
+### CVAE Architecture
 <p align="justify">
-We implemented a β-VAE, an enhancement over standard VAEs, which uses a β hyperparameter to better control disentanglement. This allows for better isolation of the latent age factor while maintaining reconstruction quality. Our architecture features a CNN-based encoder for extracting meaningful features and a mirror-decoder for reconstruction.
+Our Conditional VAE architecture consists of a CNN-based encoder that encodes face images and conditioning attributes (age and gender) into a latent space representation. A corresponding decoder reconstructs the images, conditioned on the latent representation and attributes, enabling effective attribute disentanglement and manipulation.
 </p>
+
+![image](figures/architecture.png)
 
 ### Loss Functions
 <p align="justify">
-Our training process used a combination of loss functions. We used MSE or L1 reconstruction loss to ensure high-quality image reconstruction. We also used a KL divergence loss to regularize the latent space. To further enhance age feature separation, we incorporated an age-conditioned loss function, providing additional guidance during training.
+The training process utilized reconstruction loss (Mean Squared Error - MSE) and KL divergence loss to achieve image fidelity and latent space regularization.
 </p>
 
 ## Model Training and Baseline Comparison
 
+Data was preprocessed with:
+
+- Image resizing to 128x128 pixels
+
+- Normalization of pixel values
+
 ### 1. Training from Scratch
 <p align="justify">
-We chose to train the β-VAE from scratch on a local GPU, allowing us full control over the learning process and parameters. Rather than relying on pre-trained models, this approach enabled us to customize the architecture and training regime to our specific goals of age disentanglement.
+We trained the Conditional VAE from scratch using PyTorch. The model was optimized using the Adam optimizer with a learning rate of 0.0008 for 500 epochs. Training was performed on the Apple MPS backend (ARM-based MacBook Pro), ensuring efficient utilization of hardware resources.
 </p>
 
 ### 2. Architecture Inspiration
@@ -42,9 +50,9 @@ To benchmark our progress, we planned to compare our results against a pre-train
 
 ## _Data Preparation_
 
-### 1. IMDB-Wiki Dataset
+### 1. MorphII Dataset
 <p align="justify">
-We utilized the IMDB-Wiki dataset, consisting of around 500,000 labeled face images from IMDb and Wikipedia. This dataset provided a rich source of data for training our model, including metadata such as age, gender, and timestamps.
+We utilized the MorphII dataset, consisting of around 500,000 labeled face images from IMDb and Wikipedia. This dataset provided a rich source of data for training our model, including metadata such as age, gender, and timestamps.
 </p>
 
 ### 2. Addressing Data Imbalance
@@ -63,10 +71,12 @@ One of the most time-consuming and technically challenging aspects of our projec
 <p align="justify">
 Images in our dataset had highly varied backgrounds, ranging from plain walls to complex, multicolored environments. This made it difficult for the model to focus on facial features rather than irrelevant background information.
 </p>
+
 ### 2.	Framing and Alignment Issues: 
 <p align="justify">
 Face images were not consistently aligned, with variations in head tilt, positioning, and scale affecting training quality. Without proper alignment, the model had difficulty learning smooth age transformations.
 </p>
+
 ### 3.	Lighting Variability: 
 <p align="justify">
 Different images had different exposure levels, making it harder for the model to generalize across lighting conditions.
@@ -110,7 +120,20 @@ Achieving effective disentanglement of age from other facial features proved cha
 Our age transformation simulation demonstrated the model’s ability to realistically age faces. By manipulating the age shift vector in latent space, we generated plausible aging effects while preserving the individual’s identity.
 </p>
 
-<img width="307" alt="Screenshot 2025-03-01 at 2 22 37 PM" src="https://github.com/user-attachments/assets/831e1618-5d44-43aa-a915-ccb618afefc6" />
+![reconstruction of test set](figures/test_reconstruction.png)
+
+![aging of test set](figures/test_age.png)
+
+![reconstruction of development team](figures/team_reconstruction.png)
+
+![aging of development team](figures/team_age.png)
+
+![aging of kyler](figures/gifs/age_variation_kyler.gif)
+![aging of brad](figures/gifs/age_variation_brad.gif)
+![aging of john](figures/gifs/age_variation_john.gif)
+![aging of casey](figures/gifs/age_variation_casey.gif)
+![aging of batu](figures/gifs/age_variation_batu.gif)
+
 
 ## Conclusion and Future Directions
 
