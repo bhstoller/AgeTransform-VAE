@@ -9,8 +9,6 @@ Our goal was to disentangle latent age factors in face images to enable controll
 Morph-2 Dataset.
 Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://doi.org/10.34740/KAGGLE/DS/3576052
 
-<img width="342" alt="Screenshot 2025-03-01 at 2 08 13 PM" src="https://github.com/user-attachments/assets/d555622a-5e99-46ca-aa63-179f6e4c44aa" />
-
 ## Methodology: β-VAE Implementation
 
 ### _CVAE Architecture_
