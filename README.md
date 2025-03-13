@@ -27,12 +27,12 @@ Our Conditional VAE architecture (CVAE) consists of a CNN-based encoder that enc
 <p align="justify">
   
 - The input image is a facial image with dimensions (128×128).
-- In order to keep images in distribution, we preprocess them in the following way:
-	- A separate ML algorithm detects the face and eyes
-	- The algorithm centers the eyes and masks the face
-	- We then delete the background using the mask
-	- The color distribution is then transformed to minimize divergence from the dataset average.
-
+- In order to keep the images conformed to a distribution, we preprocessed them by designing a separate ML algorithm to do the following:
+	- Centers the eyes
+	- Mask the face
+	- Delete the background using the mask
+	- Transform the color distribution to minimize divergence from the dataset average
+ 
 </p>
 
 ### 2. Encoder Network
