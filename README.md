@@ -101,7 +101,7 @@ To benchmark our progress, we planned to compare our results against a pre-train
 
 ## Data Preparation
 
-### 1. Morph II Dataset
+### 1. Morph-2 Dataset
 <p align="justify">
 We utilized the MorphII dataset, consisting of around 500,000 labeled face images from IMDb and Wikipedia. This dataset provided a rich source of data for training our model, including metadata such as age, gender, and timestamps.
 </p>
