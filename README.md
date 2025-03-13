@@ -91,7 +91,7 @@ Data was preprocessed with:
 
 ### 1. Training from Scratch
 <p align="justify">
-We trained the Conditional VAE from scratch using PyTorch. The model was optimized using the Adam optimizer with a learning rate of 0.0008 for 500 epochs. Training was performed on the Apple MPS backend (ARM-based MacBook Pro), ensuring efficient utilization of hardware resources.
+We trained the Conditional VAE from scratch using PyTorch. The model was optimized using the Adam optimizer with a learning rate of 0.0008 for 500 epochs. Training was performed on the Apple MPS backend (ARM-based MacBook Pro), so the model was optimized for M-Class architectures.
 </p>
 
 ### 2. Architecture Inspiration
