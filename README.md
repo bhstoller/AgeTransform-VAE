@@ -14,7 +14,7 @@
 - [Future Work](#future-work)
 
 <p align="justify">
-Our goal was to condition on age factors to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
+Our goal was to condition on age factors to enable age-controlled manipulation of facial images. To do this, we implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformation of supplied photos of somebody's face.
 </p>
 
 ![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
@@ -27,7 +27,7 @@ Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://d
 
 ### CVAE Architecture
 <p align="justify">
-Our Conditional VAE architecture consists of a CNN-based encoder that encodes face images and conditioning attributes (age and gender) into a latent space representation. A corresponding decoder reconstructs the images, conditioned on the latent representation and attributes, enabling effective attribute disentanglement and manipulation.
+Our Conditional VAE architecture (CVAE) consists of a CNN-based encoder that encodes face images and conditioning attributes (age and gender) into a latent space representation. Subsequently, our corresponding decoder reconstructs the images, conditioned on the latent representation and attributes, enabling effective attribute disentanglement and manipulation.
 </p>
 
 ![image](figures/architecture.png)
@@ -35,23 +35,23 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 ### 1. Input Image
 <p align="justify">
   
-- The input image is a face image with dimensions 128×128.
-- In order to keep images in distribution, we preprocess them in the following way:
-	- A separate ML algorithm detects the face and eyes
-	- The algorithm centers the eyes and masks the face
-	- We then delete the background using the mask
-	- The color distribution is then transformed to minimize divergence from the dataset average.
-
+- The input image is a facial image with dimensions (128×128).
+- In order to keep the images conformed to a distribution, we preprocessed them by designing a separate ML algorithm to do the following:
+  	- Centers the eyes
+	- Mask the face
+	- Delete the background using the mask
+	- Transform the color distribution to minimize divergence from the dataset average
+ 
 </p>
 
 ### 2. Encoder Network
 <p align="justify">
   
-- The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
-- Conv1 (16x): Extracts low-level features like edges and textures.
-- Conv2 (32x): Detects more complex patterns.
-- Conv3 (64x): Captures mid-level structures like facial parts (eyes, nose, mouth).
-- Conv4 (128x): Extracts high-level abstract representations.
+- The encoder consists of multiple convolutional layers that extract hierarchical features from the image:
+	- **Conv1 (16x):** Extracts low-level features like edges and textures.
+	- **Conv2 (32x):** Detects more complex patterns.
+	- **Conv3 (64x):** Captures mid-level structures like facial parts (eyes, nose, mouth).
+	- **Conv4 (128x):** Extracts high-level abstract representations.
 - The final encoded representation is flattened and passed through fully connected layers to compute the latent space representation.
 
 </p>
@@ -60,8 +60,8 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 <p align="justify">
   
 - The 256-dimension latent space consists of two key vectors:
-	- Mu (Mean vector): Represents the center of the learned latent distribution.
-	- LogVar (Log Variance): Defines the spread of the distribution.
+	- **Mu (Mean vector):** Represents the center of the learned latent distribution.
+	- **LogVar (Log Variance):** Defines the spread of the distribution.
 - A random latent representation is sampled using the reparameterization trick, ensuring differentiability for backpropagation.
 
 </p>
@@ -72,7 +72,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 - The decoder reconstructs the image from the latent space and the conditions (age, gender).
 - It uses transposed convolution layers (deconvolutions) to upsample the feature maps gradually.
 - The layers mirror the encoder:
-	- 128×128 → 64×64 → 32×32 → 16×16
+	- (128×128) **→** (64×64) **→** (32×32) **→** (16×16)
 - Each layer reconstructs more details of the image.
 
 </p>
