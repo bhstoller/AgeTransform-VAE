@@ -157,7 +157,7 @@ The IMDB-Wiki dataset had a notable age imbalance, with fewer samples for older 
 
 ### Disentanglement Complexity
 <p align="justify">
-Achieving effective disentanglement of age from other facial features proved challenging. Tuning the β hyperparameter in the β-VAE was crucial. We conducted extensive experiments to find an optimal value that balanced reconstruction quality and disentanglement performance.
+Achieving effective disentanglement of age from other facial features proved challenging. Tuning the hyperparameter in the conditional VAE was crucial. We conducted extensive experiments to find an optimal value that balanced reconstruction quality and disentanglement performance.
 </p>
 
 ## Results: Age Transformation Simulation
@@ -185,12 +185,12 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 
 ### Summary of Work
 <p align="justify">
-We successfully implemented an age-conditioned β-VAE for disentangling latent age factors in face images. We addressed data imbalance, optimized the model architecture, and achieved realistic age transformation simulations.
+We successfully implemented an age-conditioned VAE for disentangling latent age factors in face images. We addressed data imbalance, optimized the model architecture, and achieved realistic age transformation simulations.
 </p>
 
 ### Key Findings
 <p align="justify">
-Our work highlights the effectiveness of β-VAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
+Our work highlights the effectiveness of cnditional VAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
 </p>
 
 ### Future Work
