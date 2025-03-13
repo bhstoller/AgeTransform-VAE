@@ -94,8 +94,7 @@ The training process utilized reconstruction loss (Mean Squared Error - MSE) and
 
 Data was preprocessed with:
 
-- Image resizing to 128x128 pixels
-
+- Image resizing to (128x128) pixels
 - Normalization of pixel values
 
 ### 1. Training from Scratch
@@ -162,7 +161,7 @@ We applied age shift vectors to test the model’s interpolation capabilities. B
 
 ### Dataset Imbalance
 <p align="justify">
-The Morph-II dataset had a notable racial imbalance, with fewer samples for minority individuals,  skewing the model’s learning. To mitigate this, we employed data augmentation techniques and weighted loss functions to ensure fairer representation across all races.
+The Morph-2 dataset had a notable racial imbalance, with fewer samples for minority individuals, skewing the model’s learning. To mitigate this, we employed data augmentation techniques and weighted loss functions to ensure fairer representation across all races.
 </p>
 
 ### Disentanglement Complexity
@@ -211,7 +210,7 @@ We successfully implemented an age-conditioned VAE for disentangling latent age 
 
 ### Key Findings
 <p align="justify">
-Our work highlights the effectiveness of conditional VAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
+Our work highlights the effectiveness of CVAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
 </p>
 
 ### Future Work
