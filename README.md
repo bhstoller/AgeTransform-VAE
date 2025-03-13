@@ -1,8 +1,6 @@
 # Conditional Variational Autoencoders for Age Transformation in Facial Imagery
 
-**Date:** March 13, 2025 
-
-**Authors:** Bradley Stoller, Cassandra Maldonado, John Melel, and Kyler Rosen.
+**Date:** March 13, 2025, **Authors:** Bradley Stoller, Cassandra Maldonado, John Melel, and Kyler Rosen.
 
 
 <p align="justify">
