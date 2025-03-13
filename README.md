@@ -5,7 +5,7 @@
 **Authors:** Bradley Stoller, Cassandra Maldonado, John Melel, and Kyler Rosen.
 
 <p align="justify">
-Our goal was to condition on age factors to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
+Our goal was to condition on age factors to enable age-controlled manipulation of facial images. To do this, we implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformation of supplied photos of somebody's face.
 </p>
 
 ![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
@@ -18,7 +18,7 @@ Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://d
 
 ### CVAE Architecture
 <p align="justify">
-Our Conditional VAE architecture consists of a CNN-based encoder that encodes face images and conditioning attributes (age and gender) into a latent space representation. A corresponding decoder reconstructs the images, conditioned on the latent representation and attributes, enabling effective attribute disentanglement and manipulation.
+Our Conditional VAE architecture (CVAE) consists of a CNN-based encoder that encodes face images and conditioning attributes (age and gender) into a latent space representation. Subsequently, our corresponding decoder reconstructs the images, conditioned on the latent representation and attributes, enabling effective attribute disentanglement and manipulation.
 </p>
 
 ![image](figures/architecture.png)
@@ -26,7 +26,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 ### 1. Input Image
 <p align="justify">
   
-- The input image is a face image with dimensions 128×128.
+- The input image is a facial image with dimensions (128×128).
 - In order to keep images in distribution, we preprocess them in the following way:
 	- A separate ML algorithm detects the face and eyes
 	- The algorithm centers the eyes and masks the face
