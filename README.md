@@ -29,7 +29,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 </p>
 
-#### 2. Encoder Network
+### 2. Encoder Network
 <p align="justify">
   
 - The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
@@ -41,7 +41,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 </p>
 
-**3. Latent Space (Middle)**
+### 3. Latent Space (Middle)
 <p align="justify">
   
 - The latent space consists of two key vectors:
@@ -51,7 +51,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 </p>
 
-**4. Decoder Network**
+### 4. Decoder Network
 <p align="justify">
   
 - The decoder reconstructs the image from the latent space.
@@ -62,7 +62,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 </p>
 
-**5. Output (Reconstructed Image)**
+### 5. Output (Reconstructed Image)
 <p align="justify">
   
 - The final output is a reconstructed image with the same dimensions as the input.
