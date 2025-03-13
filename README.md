@@ -60,7 +60,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 ### 4. Decoder Network
 <p align="justify">
   
-- The decoder reconstructs the image from the latent space and the 2-dimensional conditional.
+- The decoder reconstructs the image from the latent space and the conditions (age, gender).
 - It uses transposed convolution layers (deconvolutions) to upsample the feature maps gradually.
 - The layers mirror the encoder:
 	- 128×128 → 64×64 → 32×32 → 16×16
@@ -153,7 +153,7 @@ We applied age shift vectors to test the model’s interpolation capabilities. B
 
 ### Dataset Imbalance
 <p align="justify">
-The Morph-II dataset had a notable age imbalance, with fewer samples for older individuals, potentially skewing the model’s learning. To mitigate this, we employed data augmentation techniques and weighted loss functions to ensure fairer representation across all age ranges.
+The Morph-II dataset had a notable racial imbalance, with fewer samples for minority individuals,  skewing the model’s learning. To mitigate this, we employed data augmentation techniques and weighted loss functions to ensure fairer representation across all races.
 </p>
 
 ### Disentanglement Complexity
