@@ -8,11 +8,11 @@ Our goal was to disentangle latent age factors in face images to enable controll
 
 ![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
 
-## **Dataset:**
+## Dataset:
 Morph-2 Dataset.
 Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://doi.org/10.34740/KAGGLE/DS/3576052
 
-## **β-VAE Implementation Methodology:** 
+## β-VAE Implementation Methodology:
 
 ### CVAE Architecture
 <p align="justify">
@@ -21,7 +21,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 ![image](figures/architecture.png)
 
-**1. Input Image**
+#### 1. Input Image
 <p align="justify">
   
 - The input image is a face image (likely from the dataset) with dimensions 128×128 or 256×256 pixels.
@@ -29,7 +29,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 </p>
 
-**2. Encoder Network**
+#### 2. Encoder Network
 <p align="justify">
   
 - The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
