@@ -50,9 +50,9 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 ### 3. Latent Space (Middle)
 <p align="justify">
   
-- The latent space consists of two key vectors:
-- Mu (Mean vector, 256-dimensions): Represents the center of the learned latent distribution.
-- LogVar (Log Variance, 256-dimensions): Defines the spread of the distribution.
+- The 256-dimension latent space consists of two key vectors:
+	- Mu (Mean vector): Represents the center of the learned latent distribution.
+	- LogVar (Log Variance): Defines the spread of the distribution.
 - A random latent representation is sampled using the reparameterization trick, ensuring differentiability for backpropagation.
 
 </p>
@@ -60,10 +60,10 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 ### 4. Decoder Network
 <p align="justify">
   
-- The decoder reconstructs the image from the latent space.
+- The decoder reconstructs the image from the latent space and the 2-dimensional conditional.
 - It uses transposed convolution layers (deconvolutions) to upsample the feature maps gradually.
 - The layers mirror the encoder:
-- 128×128 → 64×64 → 32×32 → 16×16
+	- 128×128 → 64×64 → 32×32 → 16×16
 - Each layer reconstructs more details of the image.
 
 </p>
@@ -99,16 +99,12 @@ We trained the Conditional VAE from scratch using PyTorch. The model was optimiz
 While training from scratch, we referenced architectures such as ResNet-like CNNs to inform our design for efficient feature extraction. These architectures provided a solid foundation for building an effective encoder and decoder.
 </p>
 
-### 3. Baseline Comparison
-<p align="justify">
-To benchmark our progress, we planned to compare our results against a pre-trained VAE model sourced from repositories like TensorFlow Model Garden or PapersWithCode. This comparison was intended to provide a quantitative measure of the improvements achieved through our β-VAE implementation and age-conditioned training approach.
-</p>
 
 ## Data Preparation
 
 ### 1. Morph-2 Dataset
 <p align="justify">
-We utilized the Morph-2 dataset, consisting of around 500,000 labeled face images from IMDb and Wikipedia. This dataset provided a rich source of data for training our model, including metadata such as age, gender, and timestamps.
+We utilized the Morph-2 dataset, consisting of around 55,000 labeled face images collected longitudinally from mugshots. This dataset provided a rich source of data for training our model, including metadata such as age and gender as gathered by the government.
 </p>
 
 ### 2. Addressing Data Imbalance
@@ -157,7 +153,7 @@ We applied age shift vectors to test the model’s interpolation capabilities. B
 
 ### Dataset Imbalance
 <p align="justify">
-The IMDB-Wiki dataset had a notable age imbalance, with fewer samples for older individuals, potentially skewing the model’s learning. To mitigate this, we employed data augmentation techniques and weighted loss functions to ensure fairer representation across all age ranges.
+The Morph-II dataset had a notable age imbalance, with fewer samples for older individuals, potentially skewing the model’s learning. To mitigate this, we employed data augmentation techniques and weighted loss functions to ensure fairer representation across all age ranges.
 </p>
 
 ### Disentanglement Complexity
