@@ -183,17 +183,17 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 
 ## Conclusion and Future Directions
 
-## Summary of Work
+### Summary of Work
 <p align="justify">
 We successfully implemented an age-conditioned β-VAE for disentangling latent age factors in face images. We addressed data imbalance, optimized the model architecture, and achieved realistic age transformation simulations.
 </p>
 
-## Key Findings
+### Key Findings
 <p align="justify">
 Our work highlights the effectiveness of β-VAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
 </p>
 
-## Future Work
+### Future Work
 <p align="justify">
 Future directions include exploring more advanced disentanglement techniques, incorporating additional facial attributes, and applying the model to other image datasets.
 </p>
