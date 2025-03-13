@@ -17,6 +17,7 @@
 - [Age Variation GIFs](#age-variation-gifs)
 - [Conclusion and Future Directions](#conclusion-and-future-directions)
 
+## Introduction:
 <p align="justify">
 Our goal was to condition on age factors to enable age-controlled manipulation of facial images. To do this, we implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformation of supplied photos of somebody's face.
 </p>
