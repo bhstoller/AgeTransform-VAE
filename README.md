@@ -4,6 +4,15 @@
 
 **Authors:** Bradley Stoller, Cassandra Maldonado, John Melel, and Kyler Rosen.
 
+# Table of Contents
+- [Introduction](#introduction)
+- [Dataset](#dataset)
+- [CVAE Architecture](#model-architecture)
+- [Training and Evaluation](#training-and-evaluation)
+- [Results](#results)
+- [Conclusion](#conclusion)
+- [Future Work](#future-work)
+
 <p align="justify">
 Our goal was to condition on age factors to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
 </p>
