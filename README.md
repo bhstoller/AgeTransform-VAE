@@ -102,6 +102,8 @@ Data was preprocessed with:
 We trained the Conditional VAE from scratch using PyTorch. The model was optimized using the Adam optimizer with a learning rate of 0.0008 for 500 epochs. Training was performed on the Apple MPS backend (ARM-based MacBook Pro), so the model was optimized for M-Class architectures.
 </p>
 
+![training curve](figures/training_curve.png)
+
 ### 2. Architecture Inspiration
 <p align="justify">
 While training from scratch, we referenced architectures such as ResNet-like CNNs to inform our design for efficient feature extraction. These architectures provided a solid foundation for building an effective encoder and decoder.
