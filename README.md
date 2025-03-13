@@ -187,6 +187,12 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 ### Casey
 ![Age Variation - Casey](figures/gifs/age_variation_Casey.gif)
 
+### John
+![Age Variation - John](figures/gifs/age_variation_John.gif)
+
+### Kyler
+![Age Variation - Kyler](figures/gifs/age_variation_Kyler.gif)
+
 ## Conclusion and Future Directions
 
 ### Summary of Work
