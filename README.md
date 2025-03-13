@@ -1,7 +1,7 @@
 # Conditional Variational Autoencoders for Age Transformation in Facial Imagery
 
-**Date:** March 13, 2025; **Authors:** Bradley Stoller, Cassandra Maldonado, John Melel, and Kyler Rosen.
-
+**Date:** March 13, 2025
+**Authors:** Bradley Stoller, Cassandra Maldonado, John Melel, and Kyler Rosen.
 
 <p align="justify">
 Our goal was to disentangle latent age factors in face images to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (Conditional VAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
