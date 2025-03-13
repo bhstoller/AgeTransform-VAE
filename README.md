@@ -119,7 +119,7 @@ While training from scratch, we referenced architectures such as ResNet-like CNN
 
 ### 1. Morph-2 Dataset
 <p align="justify">
-We utilized the Morph-2 dataset, consisting of around 55,000 labeled face images collected longitudinally from mugshots. This dataset provided a rich source of data for training our model, including metadata such as age and gender as gathered by the government.
+We used the Morph-2 dataset, consisting of around 55,000 labeled face images collected longitudinally from mugshots. This dataset provided a rich source of data for training our model, including metadata such as age and gender as gathered by the government.
 </p>
 
 ### 2. Addressing Data Imbalance
@@ -147,23 +147,16 @@ Face images were not consistently aligned, with variations in head tilt, positio
 Different images had different exposure levels, making it harder for the model to generalize across lighting conditions.
 </p>
 
-![interpolations](figures/latent_interpolation.png)
-
 ## Evaluation Metrics and Performance Assessment
 
 ### Reconstruction Accuracy
 <p align="justify">
-We assessed the model’s performance using reconstruction accuracy, measured by MSE (Mean Squared Error) or L1 loss. This metric provided insight into how well the model could reconstruct input images after encoding and decoding.
+We assessed the model’s performance using reconstruction accuracy, measured by MSE (Mean Squared Error). This metric provided insight into how well the model could reconstruct input images after encoding and decoding.
 </p>
 
 ### Latent Space Disentanglement
 <p align="justify">
-To quantify the disentanglement of the latent space, we employed metrics such as Mutual Information Gap (MIG). This metric helped us understand the extent to which individual latent variables captured distinct factors of variation (e.g., age).
-</p>
-
-### Age Shift Vector Application
-<p align="justify">
-We applied age shift vectors to test the model’s interpolation capabilities. By manipulating the latent representation, we evaluated how smoothly and realistically the model could transition between different ages.
+To normalize the latent space, we used KL-Divergence. This allowed us to tame the latent space in a way such that conditioning could stay uncorrelated with the latent vectors.
 </p>
 
 ## Key Challenges and Solutions
@@ -175,21 +168,25 @@ The Morph-2 dataset had a notable racial imbalance, with fewer samples for minor
 
 ### Disentanglement Complexity
 <p align="justify">
-Achieving effective disentanglement of age from other facial features proved challenging. Tuning the hyperparameter in the conditional VAE was crucial. We conducted extensive experiments to find an optimal value that balanced reconstruction quality and disentanglement performance.
+Achieving effective disentanglement of age from other facial features proved challenging. For this reason, we switched from a disentanglement to a conditional approach. We conducted extensive experiments to find an optimal architecture that balanced reconstruction quality and conditioning performance.
 </p>
 
 ## Results: Age Transformation Simulation
+
+Reconstructions were slightly blurry which is an expected sideeffect of VAEs as they are essentially hill climbers on distributions, but still managed to gather key idenitfying features.
+
+![reconstruction of test set](figures/test_reconstruction.png)
+
+![reconstruction of development team](figures/team_reconstruction.png)
+
+![interpolations](figures/latent_interpolation.png)
 
 ### Aging Simulation
 <p align="justify">
 Our age transformation simulation demonstrated the model’s ability to realistically age faces. By manipulating the age shift vector in latent space, we generated plausible aging effects while preserving the individual’s identity.
 </p>
 
-![reconstruction of test set](figures/test_reconstruction.png)
-
 ![aging of test set](figures/test_age.png)
-
-![reconstruction of development team](figures/team_reconstruction.png)
 
 ![aging of development team](figures/team_age.png)
 
