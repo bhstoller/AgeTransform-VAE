@@ -176,11 +176,15 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 
 ![aging of development team](figures/team_age.png)
 
-![aging of kyler](figures/gifs/age_variation_kyler.gif)
-![aging of brad](figures/gifs/age_variation_brad.gif)
-![aging of john](figures/gifs/age_variation_john.gif)
-![aging of casey](figures/gifs/age_variation_casey.gif)
-![aging of batu](figures/gifs/age_variation_batu.gif)
+![age_variation_Batu](https://github.com/user-attachments/assets/9da7a457-5105-4193-969c-c9e4cc9436b9)
+
+![age_variation_Brad](https://github.com/user-attachments/assets/49eca789-190b-4598-9b03-ea276dfb3c86)
+
+![age_variation_John](https://github.com/user-attachments/assets/25d0e25f-5000-4791-9068-40c19f06f5b0)
+
+![age_variation_Kyler](https://github.com/user-attachments/assets/4b922a6a-8d09-4404-bd14-c48556ad87ea)
+
+![age_variation_Casey](https://github.com/user-attachments/assets/2017c735-7dac-486e-b662-fd284cb657fb)
 
 ## Conclusion and Future Directions
 
