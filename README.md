@@ -7,11 +7,15 @@
 # Table of Contents
 - [Introduction](#introduction)
 - [Dataset](#dataset)
-- [CVAE Architecture](#model-architecture)
-- [Training and Evaluation](#training-and-evaluation)
-- [Results](#results)
-- [Conclusion](#conclusion)
-- [Future Work](#future-work)
+- [Conditional VAE Implementation Methodology](#conditional-vae-implementation-methodology)
+- [Model Training and Baseline Comparison](#model-training-and-baseline-comparison)
+- [Data Preparation](#data-preparation)
+- [Data Preprocessing Challenges and Solutions](#data-preprocessing-challenges-and-solutions)
+- [Evaluation Metrics and Performance Assessment](#evaluation-metrics-and-performance-assessment)
+- [Key Challenges and Solutions](#key-challenges-and-solutions)
+- [Results: Age Transformation Simulation](#results-age-transformation-simulation)
+- [Age Variation GIFs](#age-variation-gifs)
+- [Conclusion and Future Directions](#conclusion-and-future-directions)
 
 <p align="justify">
 Our goal was to condition on age factors to enable age-controlled manipulation of facial images. To do this, we implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformation of supplied photos of somebody's face.
