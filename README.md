@@ -28,21 +28,21 @@ Our Conditional VAE architecture (CVAE) consists of a CNN-based encoder that enc
   
 - The input image is a facial image with dimensions (128×128).
 - In order to keep the images conformed to a distribution, we preprocessed them by designing a separate ML algorithm to do the following:
-  	1. Centers the eyes
-	2. Mask the face
-	3. Delete the background using the mask
-	4. Transform the color distribution to minimize divergence from the dataset average
+  	- Centers the eyes
+	- Mask the face
+	- Delete the background using the mask
+	- Transform the color distribution to minimize divergence from the dataset average
  
 </p>
 
 ### 2. Encoder Network
 <p align="justify">
   
-- The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
-- Conv1 (16x): Extracts low-level features like edges and textures.
-- Conv2 (32x): Detects more complex patterns.
-- Conv3 (64x): Captures mid-level structures like facial parts (eyes, nose, mouth).
-- Conv4 (128x): Extracts high-level abstract representations.
+- The encoder consists of multiple convolutional layers that extract hierarchical features from the image:
+	- **Conv1 (16x):** Extracts low-level features like edges and textures.
+	- **Conv2 (32x):** Detects more complex patterns.
+	- **Conv3 (64x):** Captures mid-level structures like facial parts (eyes, nose, mouth).
+	- **Conv4 (128x):** Extracts high-level abstract representations.
 - The final encoded representation is flattened and passed through fully connected layers to compute the latent space representation.
 
 </p>
