@@ -5,7 +5,7 @@
 **Authors:** Bradley Stoller, Cassandra Maldonado, John Melel, and Kyler Rosen.
 
 <p align="justify">
-Our goal was to disentangle latent age factors in face images to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (Conditional VAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
+Our goal was to condition on  age factors to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
 </p>
 
 ![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
@@ -14,7 +14,7 @@ Our goal was to disentangle latent age factors in face images to enable controll
 Morph-2 Dataset.
 Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://doi.org/10.34740/KAGGLE/DS/3576052
 
-## β-VAE Implementation Methodology:
+## Conditional VAE Implementation Methodology:
 
 ### CVAE Architecture
 <p align="justify">
@@ -26,8 +26,12 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 ### 1. Input Image
 <p align="justify">
   
-- The input image is a face image (likely from the dataset) with dimensions 128×128 or 256×256 pixels.
-- This image is passed through a Convolutional Neural Network (CNN)-based Encoder.
+- The input image is a face image with dimensions 128×128.
+- In order to keep images in distribution, we preprocess them in the following way:
+	- A seperate ML algorithm detects the face and eyes
+	- The algorithm centers the eyes and masks the face
+	- We then delete the background using the mask
+	- The color distribution is then transformed to minimize divergence from the dataset average.
 
 </p>
 
