@@ -112,10 +112,8 @@ Recognizing the dataset’s inherent imbalances (fewer samples for older individ
 
 ## Data Preprocessing Challenges and Solutions
 <p align="justify">
-One of the most time-consuming and technically challenging aspects of our project was ensuring consistency in image backgrounds, framing, and lighting. Without addressing these factors, the model struggled to learn a clean latent representation of age, as variations in background color, head positioning, and brightness introduced unwanted noise.
+One of the most time-consuming and technically challenging aspects of our project was ensuring consistency in image backgrounds, framing, and lighting. Without addressing these factors, the model struggled to learn a clean latent representation of age, as variations in background color, head positioning, and brightness introduced unwanted noise. Specifically, we faced the following challenges:
 </p>
-
-### Challenges Faced
 
 ### 1.	Background Inconsistency:
 <p align="justify">
