@@ -183,19 +183,19 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 ## Age Variation GIFs
 
 ### Batu
-![Age Variation - Batu](figures/gifs/age_variation_Batu.gif)
+<img src="figures/gifs/age_variation_Batu.gif" width="400">
 
 ### Brad
-![Age Variation - Brad](figures/gifs/age_variation_Brad.gif)
+<img src="figures/gifs/age_variation_Brad.gif" width="400">
 
 ### Casey
-![Age Variation - Casey](figures/gifs/age_variation_Casey.gif)
+<img src="figures/gifs/age_variation_Casey.gif" width="400">
 
 ### John
-![Age Variation - John](figures/gifs/age_variation_John.gif)
+<img src="figures/gifs/age_variation_John.gif" width="400">
 
 ### Kyler
-![Age Variation - Kyler](figures/gifs/age_variation_Kyler.gif)
+<img src="figures/gifs/age_variation_Kyler.gif" width="400">
 
 ## Conclusion and Future Directions
 
