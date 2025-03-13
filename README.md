@@ -51,8 +51,8 @@ Our Conditional VAE architecture (CVAE) consists of a CNN-based encoder that enc
 <p align="justify">
   
 - The 256-dimension latent space consists of two key vectors:
-	- Mu (Mean vector): Represents the center of the learned latent distribution.
-	- LogVar (Log Variance): Defines the spread of the distribution.
+	- **Mu (Mean vector):** Represents the center of the learned latent distribution.
+	- **LogVar (Log Variance):** Defines the spread of the distribution.
 - A random latent representation is sampled using the reparameterization trick, ensuring differentiability for backpropagation.
 
 </p>
@@ -63,7 +63,7 @@ Our Conditional VAE architecture (CVAE) consists of a CNN-based encoder that enc
 - The decoder reconstructs the image from the latent space and the conditions (age, gender).
 - It uses transposed convolution layers (deconvolutions) to upsample the feature maps gradually.
 - The layers mirror the encoder:
-	- 128×128 → 64×64 → 32×32 → 16×16
+	- (128×128) **→** (64×64) **→** (32×32) **→** (16×16)
 - Each layer reconstructs more details of the image.
 
 </p>
