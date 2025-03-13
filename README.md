@@ -202,7 +202,7 @@ We successfully implemented an age-conditioned VAE for disentangling latent age 
 
 ### Key Findings
 <p align="justify">
-Our work highlights the effectiveness of cnditional VAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
+Our work highlights the effectiveness of conditional VAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
 </p>
 
 ### Future Work
