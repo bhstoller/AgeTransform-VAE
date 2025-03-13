@@ -181,7 +181,6 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 ![aging of casey](figures/gifs/age_variation_casey.gif)
 ![aging of batu](figures/gifs/age_variation_batu.gif)
 
-
 ## Conclusion and Future Directions
 
 ### Summary of Work
