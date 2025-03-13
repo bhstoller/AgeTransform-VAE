@@ -29,12 +29,14 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 **2. Encoder Network**
 <p align="justify">
+  
 - The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
 - Conv1 (16x): Extracts low-level features like edges and textures.
 - Conv2 (32x): Detects more complex patterns.
 - Conv3 (64x): Captures mid-level structures like facial parts (eyes, nose, mouth).
 - Conv4 (128x): Extracts high-level abstract representations.
 - The final encoded representation is flattened and passed through fully connected layers to compute the latent space representation.
+
 </p>
 
 **3. Latent Space (Middle)**
