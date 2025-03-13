@@ -23,41 +23,41 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
 
 **1. Input Image**
 <p align="justify">
-	•	The input image is a face image (likely from the dataset) with dimensions 128×128 or 256×256 pixels.
-	•	This image is passed through a Convolutional Neural Network (CNN)-based Encoder.
+- The input image is a face image (likely from the dataset) with dimensions 128×128 or 256×256 pixels.
+- This image is passed through a Convolutional Neural Network (CNN)-based Encoder.
 </p>
 
 **2. Encoder Network**
 <p align="justify">
-	•	The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
-	•	Conv1 (16x): Extracts low-level features like edges and textures.
-	•	Conv2 (32x): Detects more complex patterns.
-	•	Conv3 (64x): Captures mid-level structures like facial parts (eyes, nose, mouth).
-	•	Conv4 (128x): Extracts high-level abstract representations.
-	•	The final encoded representation is flattened and passed through fully connected layers to compute the latent space representation.
+- The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
+- Conv1 (16x): Extracts low-level features like edges and textures.
+- Conv2 (32x): Detects more complex patterns.
+- Conv3 (64x): Captures mid-level structures like facial parts (eyes, nose, mouth).
+- Conv4 (128x): Extracts high-level abstract representations.
+- The final encoded representation is flattened and passed through fully connected layers to compute the latent space representation.
 </p>
 
 **3. Latent Space (Middle)**
 <p align="justify">
-	•	The latent space consists of two key vectors:
-	•	Mu (Mean vector, 256-dimensions): Represents the center of the learned latent distribution.
-	•	LogVar (Log Variance, 256-dimensions): Defines the spread of the distribution.
-	•	A random latent representation is sampled using the reparameterization trick, ensuring differentiability for backpropagation.
+- The latent space consists of two key vectors:
+- Mu (Mean vector, 256-dimensions): Represents the center of the learned latent distribution.
+- LogVar (Log Variance, 256-dimensions): Defines the spread of the distribution.
+- A random latent representation is sampled using the reparameterization trick, ensuring differentiability for backpropagation.
 </p>
 
 **4. Decoder Network**
 <p align="justify">
-	•	The decoder reconstructs the image from the latent space.
-	•	It uses transposed convolution layers (deconvolutions) to upsample the feature maps gradually.
-	•	The layers mirror the encoder:
-	•	128×128 → 64×64 → 32×32 → 16×16
-	•	Each layer reconstructs more details of the image.
+- The decoder reconstructs the image from the latent space.
+- It uses transposed convolution layers (deconvolutions) to upsample the feature maps gradually.
+- The layers mirror the encoder:
+- 128×128 → 64×64 → 32×32 → 16×16
+- Each layer reconstructs more details of the image.
 </p>
 
 **5. Output (Reconstructed Image)**
 <p align="justify">
-	•	The final output is a reconstructed image with the same dimensions as the input.
-	•	If age manipulation is applied, the age-conditioned vector modifies the latent space to generate an aged (or de-aged) version of the face.
+- The final output is a reconstructed image with the same dimensions as the input.
+- If age manipulation is applied, the age-conditioned vector modifies the latent space to generate an aged (or de-aged) version of the face.
 </p>
 
 ### Loss Functions
