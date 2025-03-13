@@ -193,7 +193,4 @@ We successfully implemented an age-conditioned β-VAE for disentangling latent a
 Our work highlights the effectiveness of β-VAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
 </p>
 
-### Future Work
-<p align="justify">
-Future directions include exploring more advanced disentanglement techniques, incorporating additional facial attributes, and applying the model to other image datasets.
-</p>
+
