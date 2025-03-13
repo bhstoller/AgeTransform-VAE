@@ -147,8 +147,6 @@ To quantify the disentanglement of the latent space, we employed metrics such as
 We applied age shift vectors to test the model’s interpolation capabilities. By manipulating the latent representation, we evaluated how smoothly and realistically the model could transition between different ages.
 </p>
 
-![image](https://github.com/user-attachments/assets/2986904c-74b3-4986-b9ae-f366cd0e84ac)
-
 ## Key Challenges and Solutions
 
 ### Dataset Imbalance
