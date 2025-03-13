@@ -147,6 +147,8 @@ Face images were not consistently aligned, with variations in head tilt, positio
 Different images had different exposure levels, making it harder for the model to generalize across lighting conditions.
 </p>
 
+![interpolations](figures/latent_interpolation.png)
+
 ## Evaluation Metrics and Performance Assessment
 
 ### Reconstruction Accuracy
