@@ -5,7 +5,7 @@
 **Authors:** Bradley Stoller, Cassandra Maldonado, John Melel, and Kyler Rosen.
 
 <p align="justify">
-Our goal was to condition on  age factors to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
+Our goal was to condition on age factors to enable controlled age manipulation. We implemented a Conditional Variational Autoencoder (CVAE), leveraging age and gender conditions within our model to generate realistic and controllable age transformations.
 </p>
 
 ![image](https://github.com/user-attachments/assets/29226943-95e9-4ce7-8449-c5c19ad1604d)
@@ -28,7 +28,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
   
 - The input image is a face image with dimensions 128×128.
 - In order to keep images in distribution, we preprocess them in the following way:
-	- A seperate ML algorithm detects the face and eyes
+	- A separate ML algorithm detects the face and eyes
 	- The algorithm centers the eyes and masks the face
 	- We then delete the background using the mask
 	- The color distribution is then transformed to minimize divergence from the dataset average.
@@ -179,19 +179,19 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 ## Age Variation GIFs
 
 ### Batu
-![Age Variation - Batu](figures/gifs/age_variation_Batu.gif)
+<img src="figures/gifs/age_variation_Batu.gif" width="400">
 
 ### Brad
-![Age Variation - Brad](figures/gifs/age_variation_Brad.gif)
+<img src="figures/gifs/age_variation_Brad.gif" width="400">
 
 ### Casey
-![Age Variation - Casey](figures/gifs/age_variation_Casey.gif)
+<img src="figures/gifs/age_variation_Casey.gif" width="400">
 
 ### John
-![Age Variation - John](figures/gifs/age_variation_John.gif)
+<img src="figures/gifs/age_variation_John.gif" width="400">
 
 ### Kyler
-![Age Variation - Kyler](figures/gifs/age_variation_Kyler.gif)
+<img src="figures/gifs/age_variation_Kyler.gif" width="400">
 
 ## Conclusion and Future Directions
 
