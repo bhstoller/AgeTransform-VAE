@@ -26,7 +26,7 @@ Our Conditional VAE architecture consists of a CNN-based encoder that encodes fa
   
 - The input image is a face image (likely from the dataset) with dimensions 128×128 or 256×256 pixels.
 - This image is passed through a Convolutional Neural Network (CNN)-based Encoder.
-- 
+
 </p>
 
 **2. Encoder Network**
