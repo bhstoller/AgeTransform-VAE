@@ -14,20 +14,20 @@ Kurt Ricanek, and Tesfaye Tessema. (2023). MORPH-2 [Data set]. Kaggle. https://d
 
 ## Methodology: β-VAE Implementation
 
-### _CVAE Architecture_
+### CVAE Architecture
 <p align="justify">
 Our Conditional VAE architecture consists of a CNN-based encoder that encodes face images and conditioning attributes (age and gender) into a latent space representation. A corresponding decoder reconstructs the images, conditioned on the latent representation and attributes, enabling effective attribute disentanglement and manipulation.
 </p>
 
 ![image](figures/architecture.png)
 
-_**1. Input Image**_
+**1. Input Image**
 <p align="justify">
 	•	The input image is a face image (likely from the dataset) with dimensions 128×128 or 256×256 pixels.
 	•	This image is passed through a Convolutional Neural Network (CNN)-based Encoder.
 </p>
 
-_**2. Encoder Network**_
+**2. Encoder Network**
 <p align="justify">
 	•	The encoder consists of multiple convolutional layers that extract hierarchical features from the image.
 	•	Conv1 (16x): Extracts low-level features like edges and textures.
@@ -37,7 +37,7 @@ _**2. Encoder Network**_
 	•	The final encoded representation is flattened and passed through fully connected layers to compute the latent space representation.
 </p>
 
-_**3. Latent Space (Middle)**_
+**3. Latent Space (Middle)**
 <p align="justify">
 	•	The latent space consists of two key vectors:
 	•	Mu (Mean vector, 256-dimensions): Represents the center of the learned latent distribution.
@@ -45,7 +45,7 @@ _**3. Latent Space (Middle)**_
 	•	A random latent representation is sampled using the reparameterization trick, ensuring differentiability for backpropagation.
 </p>
 
-_**4. Decoder Network**_
+**4. Decoder Network**
 <p align="justify">
 	•	The decoder reconstructs the image from the latent space.
 	•	It uses transposed convolution layers (deconvolutions) to upsample the feature maps gradually.
@@ -54,13 +54,13 @@ _**4. Decoder Network**_
 	•	Each layer reconstructs more details of the image.
 </p>
 
-_**5. Output (Reconstructed Image)**_
+**5. Output (Reconstructed Image)**
 <p align="justify">
 	•	The final output is a reconstructed image with the same dimensions as the input.
 	•	If age manipulation is applied, the age-conditioned vector modifies the latent space to generate an aged (or de-aged) version of the face.
 </p>
 
-### _Loss Functions_
+### Loss Functions
 <p align="justify">
 The training process utilized reconstruction loss (Mean Squared Error - MSE) and KL divergence loss to achieve image fidelity and latent space regularization.
 </p>
@@ -73,29 +73,29 @@ Data was preprocessed with:
 
 - Normalization of pixel values
 
-### _1. Training from Scratch_
+### 1. Training from Scratch
 <p align="justify">
 We trained the Conditional VAE from scratch using PyTorch. The model was optimized using the Adam optimizer with a learning rate of 0.0008 for 500 epochs. Training was performed on the Apple MPS backend (ARM-based MacBook Pro), ensuring efficient utilization of hardware resources.
 </p>
 
-### _2. Architecture Inspiration_
+### 2. Architecture Inspiration
 <p align="justify">
 While training from scratch, we referenced architectures such as ResNet-like CNNs to inform our design for efficient feature extraction. These architectures provided a solid foundation for building an effective encoder and decoder.
 </p>
 
-### _3. Baseline Comparison_
+### 3. Baseline Comparison
 <p align="justify">
 To benchmark our progress, we planned to compare our results against a pre-trained VAE model sourced from repositories like TensorFlow Model Garden or PapersWithCode. This comparison was intended to provide a quantitative measure of the improvements achieved through our β-VAE implementation and age-conditioned training approach.
 </p>
 
 ## Data Preparation
 
-### _1. MorphII Dataset_
+### 1. MorphII Dataset
 <p align="justify">
 We utilized the MorphII dataset, consisting of around 500,000 labeled face images from IMDb and Wikipedia. This dataset provided a rich source of data for training our model, including metadata such as age, gender, and timestamps.
 </p>
 
-### _2. Addressing Data Imbalance_
+### 2. Addressing Data Imbalance
 <p align="justify">
 Recognizing the dataset’s inherent imbalances (fewer samples for older individuals), we implemented several preprocessing steps to improve training quality and ensure fair representation across age ranges.
 </p>
@@ -105,36 +105,36 @@ Recognizing the dataset’s inherent imbalances (fewer samples for older individ
 One of the most time-consuming and technically challenging aspects of our project was ensuring consistency in image backgrounds, framing, and lighting. Without addressing these factors, the model struggled to learn a clean latent representation of age, as variations in background color, head positioning, and brightness introduced unwanted noise.
 </p>
 
-### _Challenges Faced_
+### Challenges Faced
 
-### _1.	Background Inconsistency:_ 
+### 1.	Background Inconsistency:
 <p align="justify">
 Images in our dataset had highly varied backgrounds, ranging from plain walls to complex, multicolored environments. This made it difficult for the model to focus on facial features rather than irrelevant background information.
 </p>
 
-### _2.	Framing and Alignment Issues:_ 
+### 2.	Framing and Alignment Issues: 
 <p align="justify">
 Face images were not consistently aligned, with variations in head tilt, positioning, and scale affecting training quality. Without proper alignment, the model had difficulty learning smooth age transformations.
 </p>
 
-### _3.	Lighting Variability:_ 
+### 3.	Lighting Variability:
 <p align="justify">
 Different images had different exposure levels, making it harder for the model to generalize across lighting conditions.
 </p>
 
 ## Evaluation Metrics and Performance Assessment
 
-### _Reconstruction Accuracy_
+### Reconstruction Accuracy
 <p align="justify">
 We assessed the model’s performance using reconstruction accuracy, measured by MSE (Mean Squared Error) or L1 loss. This metric provided insight into how well the model could reconstruct input images after encoding and decoding.
 </p>
 
-### _Latent Space Disentanglement_
+### Latent Space Disentanglement
 <p align="justify">
 To quantify the disentanglement of the latent space, we employed metrics such as Mutual Information Gap (MIG). This metric helped us understand the extent to which individual latent variables captured distinct factors of variation (e.g., age).
 </p>
 
-### _Age Shift Vector Application_
+### Age Shift Vector Application
 <p align="justify">
 We applied age shift vectors to test the model’s interpolation capabilities. By manipulating the latent representation, we evaluated how smoothly and realistically the model could transition between different ages.
 </p>
@@ -143,19 +143,19 @@ We applied age shift vectors to test the model’s interpolation capabilities. B
 
 ## Key Challenges and Solutions
 
-### _Dataset Imbalance_
+### Dataset Imbalance
 <p align="justify">
 The IMDB-Wiki dataset had a notable age imbalance, with fewer samples for older individuals, potentially skewing the model’s learning. To mitigate this, we employed data augmentation techniques and weighted loss functions to ensure fairer representation across all age ranges.
 </p>
 
-### _Disentanglement Complexity_
+### Disentanglement Complexity
 <p align="justify">
 Achieving effective disentanglement of age from other facial features proved challenging. Tuning the β hyperparameter in the β-VAE was crucial. We conducted extensive experiments to find an optimal value that balanced reconstruction quality and disentanglement performance.
 </p>
 
 ## Results: Age Transformation Simulation
 
-### _Aging Simulation_
+### Aging Simulation
 <p align="justify">
 Our age transformation simulation demonstrated the model’s ability to realistically age faces. By manipulating the age shift vector in latent space, we generated plausible aging effects while preserving the individual’s identity.
 </p>
@@ -177,19 +177,19 @@ Our age transformation simulation demonstrated the model’s ability to realisti
 
 ## Conclusion and Future Directions
 
-## _Summary of Work_
+## Summary of Work
 <p align="justify">
 We successfully implemented an age-conditioned β-VAE for disentangling latent age factors in face images. We addressed data imbalance, optimized the model architecture, and achieved realistic age transformation simulations.
 </p>
 
 <img width="302" alt="Screenshot 2025-03-01 at 2 25 31 PM" src="https://github.com/user-attachments/assets/22f37dc5-6f7f-46ac-bbab-bf7a8f2b008a" />
 
-## _Key Findings_
+## Key Findings
 <p align="justify">
 Our work highlights the effectiveness of β-VAEs for controlled attribute manipulation in facial images. The age-conditioned loss function and careful hyperparameter tuning were crucial for achieving high-quality results.
 </p>
 
-## _Future Work_
+## Future Work
 <p align="justify">
 Future directions include exploring more advanced disentanglement techniques, incorporating additional facial attributes, and applying the model to other image datasets.
 </p>
